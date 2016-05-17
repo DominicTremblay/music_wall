@@ -1,0 +1,22 @@
+.jumbotron {
+  background-image: url("/images/music_header.jpg");
+
+}
+
+h1.song-heading {
+  color: black;
+}
+
+.media-object {
+  width: 70px;
+  height: 70px;
+}
+
+.errorMessages {
+  color: red;
+}
+
+.errorDialog {
+  width: 30%;
+  margin: 0 auto;
+}
