@@ -1,0 +1,55 @@
+<div class = "container">
+
+<div class = "jumbotron">
+
+<h1 class="song-heading">Add a song</h1>
+
+</div>
+
+
+<% if @song.errors.any? %>
+  <div class="errorDialog">
+    <strong>Some issues with entering your song, please fix them:</strong>
+    <ul class="errorMessages">
+      <% @song.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="row">
+<div class="col-md-4">1</div>
+
+<div class="col-md-4">
+<form method="post" action="/songs">
+  
+  <div class="form-group">
+    <label for="songName">Name:</label>
+    <input type="text" class="form-control" name="name" id="songName" value="<%= @song.name %>">
+  </div>
+
+  <div class="form-group">
+    <label for="songArtist">Artist:</label>
+    <input type="text" class="form-control" name="artist" id="songArtist" value="<%= @song.artist %>">
+  </div>
+  
+  <div class="form-group">
+    <label for="songLikes">Likes:</label>
+    <input type="text" class="form-control" name="likes" id="songLikes" value="<%= @song.likes %>">
+  </div>
+  <input type="submit" value="Submit" >
+  
+</form>
+
+
+</div>
+
+
+
+
+<div class="col-md-4"></div>
+</div>
+
+
+</div>
