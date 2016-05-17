@@ -2,7 +2,7 @@
 
 <% if @song.errors.any? %>
   <div>
-    <strong>Some issues with your song form, please fix them:</strong>
+    <strong>Some issues with entering your song, please fix them:</strong>
     <ul>
       <% @song.errors.full_messages.each do |message| %>
         <li><%= message %></li>

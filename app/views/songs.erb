@@ -1,11 +1,17 @@
 <h1>List of songs</h1>
 
-<%= songs.each do |song| %>
+<% @songs.each_with_index do |song, i| i+=1 %>
 <div>
 
 <div>Song title</div>
-<div><% song.name</div>
+<div><%= i %>- <%= song.name %></div>
+<div>Artist</div>
+<div><%= song.artist %></div>
+<div>Likes</div>
+<div><%= song.likes %></div>
 
 </div>
 <% end %>
 
+
+<p><a href="/new">Add a song</a></p>

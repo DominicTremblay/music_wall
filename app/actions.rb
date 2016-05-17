@@ -9,15 +9,10 @@ get '/songs' do
   erb :songs
 end
 
-get '/albums' do
-  @albums = Album.all
-  erb :albums
-end
-
 get '/new' do
+  @song = Song.new
   erb :new
 end
-
 
 post '/songs' do
   @song = Song.new(
@@ -25,7 +20,7 @@ post '/songs' do
     artist: params[:artist],
     likes:  params[:likes]
   )
-  if @songs.save
+  if @song.save
     redirect '/songs'
   else
     erb :'/new'
