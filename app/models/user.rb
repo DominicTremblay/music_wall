@@ -1,0 +1,9 @@
+class User < ActiveRecord::Base
+  
+  has_many :songs
+
+  has_secure_password 
+  
+  validates :email, presence: true
+
+end

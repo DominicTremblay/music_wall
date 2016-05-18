@@ -11,8 +11,11 @@ gem 'sinatra-activerecord'
 gem 'puma'
 gem 'tux'
 
+gem 'bcrypt'
+
 group :development, :test do
   gem 'pry'
+  gem 'byebug'
   gem 'shotgun'
   gem 'sqlite3'
 end

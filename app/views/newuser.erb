@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="container">
                 
@@ -21,14 +20,8 @@
         
                     
                 </ul>
-                 <% if current_user %>   
-                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/logout">
-
-                    <span class="glyphicon glyphicon-log-out"></span> Logout</a>
-                    </li>
-                </ul>  
-                <% end %>
+                    
+                 
                 
                     
                     
@@ -36,72 +29,66 @@
                 
             </div>
         </nav> 
+<div class="container main">
 
-
-
-
-<div class = "container main">
-
-<h1 class="song-heading">List of songs</h1>
-
-
-
-<% if current_user %>
-
-   <p>logged in with <%= current_user.email %></p>
-
-<% @songs.each_with_index do |song, i| i+=1 %>
-
-<div class="media">
-  <div class="media-left">
-    <a href="#">
-      <img class="media-object" src="/images/X_cover.png" alt="...">
-    </a>
-  </div>
-  <div class="media-body">
-    <h4 class="media-heading"><%= i %>- <%= song.name %></h4>
-    by: <%= song.artist %>
-    likes: <%= song.likes %>
-  </div>
-</div>
-<% end %>
-<hr>
-<p><button type="button" id="btn_add" class="btn btn-success">Add a song</button></p>
-
-<% else %>
-
-<p class="errorMessages">You are not logged in. Please log in to add songs</p>
 
 <div class="row">
-<div class="col-md-3"></div>
+<div class="col-md-4"></div>
 
-<div class="col-md-6">
+<div class="col-md-4">
+<% if @error %>
+  <p class="errorMessages"><%= @error %></p>
+<% end %>
 
-<form class="form" action="/login" method="post">
+<h3>Please enter your login information below </h3>
 
+<form class="form" method="post" action="/login">
+  
 <div class="form-group">
-    <label for="email">Email</label>
+    <label for="email">Enter your email</label>
     <input type="email" id="email" class="form-control" name="email" required>
 </div>
 
 <div class="form-group">
-    <label for="password">Password</label>
+    <label for="password">Enter a password</label>
     <input type="password" id="password" class="form-control" name="password" required>
 </div>
 
-<div class="form-group">
-    <label><input type="checkbox" name="remember_me" value="true"> Remember Me</label>
-</div>
 
-
-    <button class="btn-primary" type="submit">Log In</button>
-
+  <input type="submit" value="Submit" >
+  
 </form>
 
+<h3>Register as a new user </h3>
+
+<form class="form" method="post" action="/register">
+  
+<div class="form-group">
+    <label for="email">Enter your email</label>
+    <input type="email" id="email" class="form-control" name="email" required>
 </div>
-<div class="col-md-3"></div>
-<% end %>
+
+<div class="form-group">
+    <label for="password">Enter a password</label>
+    <input type="password" id="password" class="form-control" name="password" required>
+</div>
+
+
+  <input type="submit" value="Submit" >
+  
+</form>
 
 
 </div>
 
+
+
+
+<div class="col-md-4"></div>
+</div>
+  
+
+
+
+
+</div>

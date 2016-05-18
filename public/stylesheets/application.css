@@ -14,9 +14,21 @@ h1.song-heading {
 
 .errorMessages {
   color: red;
+  font-size: 1.5em;
 }
 
 .errorDialog {
   width: 30%;
   margin: 0 auto;
+}
+
+.form {
+  background-color: darkgrey;
+  color: white;
+  padding: 8px;
+
+}
+
+.main {
+  margin-top: 50px;
 }

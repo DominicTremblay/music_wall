@@ -16,8 +16,10 @@ GEM
       tzinfo (~> 1.1)
     arel (6.0.3)
     backports (3.6.7)
+    bcrypt (3.1.11)
     bond (0.5.1)
     builder (3.2.2)
+    byebug (8.2.5)
     coderay (1.1.0)
     i18n (0.7.0)
     json (1.8.3)
@@ -76,6 +78,8 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  bcrypt
+  byebug
   pry
   puma
   rake
@@ -85,3 +89,6 @@ DEPENDENCIES
   sinatra-contrib
   sqlite3
   tux
+
+BUNDLED WITH
+   1.11.2
